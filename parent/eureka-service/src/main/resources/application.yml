@@ -1,0 +1,12 @@
+server:
+  port: 10001 # 端口
+spring:
+  application:
+    name: eureka-server # 应用名称，会在Eureka中显示
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    fetch-registry: false #要不要去注册中心获取其他服务的地址
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

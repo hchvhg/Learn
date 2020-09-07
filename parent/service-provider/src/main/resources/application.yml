@@ -1,0 +1,17 @@
+server:
+  port: 10002
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: hchvhg
+    driverClassName: com.mysql.cj.jdbc.Driver
+  application:
+    name: service-provider # 应用名称，注册到eureka后的服务名称
+mybatis:
+#  type-aliases-package: com.zk.mapper #MyBatis注解形式扫描实体类路径
+  mapper-locations: classpath:mybatis/*.xml #扫描mybatis目录下所有xml文件作为mapper
+eureka:
+  client:
+    service-url: # 指定注册中心EurekaServer地址
+      defaultZone: http://127.0.0.1:10001/eureka
